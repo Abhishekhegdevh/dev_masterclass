@@ -1,0 +1,26 @@
+pipeline{
+    agent any
+    stages{
+        stage('uptime'){
+            steps{
+                sh '''
+                uptime
+                '''
+            }
+            }
+        }
+        stage('disk usage'){
+            steps{
+                sh '''
+                df -h
+                '''
+               }
+           }  
+        stage('memory usage'){
+            steps{
+                sh '''
+                free -h
+                '''
+               }
+           }  
+}
