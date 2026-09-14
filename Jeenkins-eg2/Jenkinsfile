@@ -22,14 +22,10 @@ pipeline{
                 '''
                }
            }  
-           stage('poll-scm-checkin')
-           {
-            steps{
-                sh '''
-                poll-scm-checkin
-                echo "SCM checkin detected"
-                '''
-               }
-           }  
+           stage('poll-scm-checkin') {
+            steps {
+                sh 'echo "SCM polling check-in"'
+           } 
+           } 
     }
 }
